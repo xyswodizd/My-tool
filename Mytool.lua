@@ -1,0 +1,6 @@
+local f = CreateFrame("Frame")
+f:RegisterEvent("PLAYER_ENTERING_WORLD")
+f:SetScript("OnEvent", function(self, event)
+	PlayerName:SetPoint("CENTER", PlayerFrameHealthBar, "CENTER", 0, 24)
+	TargetFrameTextureFrameName:SetPoint("CENTER", TargetFrameHealthBar, "CENTER", 0, 24)
+end)
