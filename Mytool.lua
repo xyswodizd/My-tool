@@ -8,3 +8,11 @@ f:SetScript("OnEvent", function(self, event)
 	TargetFrameHealthBarTextLeft:SetPoint("left", TargetFrameHealthBar, "left", 1, -1)---在生命值和百分比同时显示时，目标生命值百分比位置
 	TargetFrameHealthBarTextRight:SetPoint("Right", TargetFrameHealthBar, "Right", -5, -1)---在生命值和百分比同时显示时，目标生命值位置
 end)
+
+local Bx = -6-- BUFF的X坐标
+local By = 30-- BUFF的Y坐标
+	BuffFrame:ClearAllPoints()
+local newSetPoint = BuffFrame.SetPoint
+	hooksecurefunc(BuffFrame, "SetPoint", function()
+	newSetPoint(BuffFrame, "TOPRIGHT", PlayerFrame, "TOPRIGHT", Bx, By)
+end)
